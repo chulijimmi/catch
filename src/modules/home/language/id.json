@@ -1,0 +1,5 @@
+{
+  "nsHome": {
+    "welcome": "Hi, {{user.name}} selamat datang."
+  }
+}
