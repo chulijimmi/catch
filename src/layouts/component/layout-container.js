@@ -8,7 +8,6 @@ import { phone, ipad, desktop } from "../style/style-query";
 const Container = styled.div`
   margin: 0px 80px;
   display: flex;
-  justify-content: space-between;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   ${ipad} {
