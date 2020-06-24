@@ -1,4 +1,4 @@
-import Home from "../modules/home/component/home-loadable";
+import Product from "../modules/product/component/product-loadable";
 import Notfound from "../modules/notfound/component/notfound-loadable";
 
 /**
@@ -8,8 +8,8 @@ const NavigationConfig = [
   {
     exact: true,
     path: "/",
-    uriLabel: "Home",
-    component: Home,
+    uriLabel: "Product",
+    component: Product,
     testId: "nav-home",
   },
   {
