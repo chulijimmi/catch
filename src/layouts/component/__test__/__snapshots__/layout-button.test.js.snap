@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout-button ListPopUp test snapshoot listpopup 1`] = `
+.emotion-3 {
+  position: absolute;
+  background: white;
+  width: 100%;
+  top: 100px;
+  z-index: 2;
+  box-shadow: rgba(0,0,0,0.1) 0px 1px 6px 0px;
+}
+
+.emotion-2 {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  margin: 0px;
+  padding: 15px;
+}
+
+.emotion-0:hover {
+  background-color: #a9ddf9;
+  cursor: pointer;
+}
+
+<div
+  className="emotion-3"
+>
+  <ul
+    className="emotion-2"
+  >
+    <li
+      className="emotion-0"
+      onClick={[MockFunction]}
+    >
+      <span>
+        Menu One
+      </span>
+    </li>
+    <li
+      className="emotion-0"
+      onClick={[MockFunction]}
+    >
+      <span>
+        Menu Two
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`layout-button test snappshoot button 1`] = `
+.emotion-0 {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  border: 1px solid #005a8b;
+}
+
+<button
+  className="emotion-0"
+  onClick={[MockFunction]}
+>
+  test
+</button>
+`;

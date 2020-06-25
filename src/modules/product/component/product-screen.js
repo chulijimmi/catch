@@ -1,8 +1,55 @@
-import React, { Profiler } from "react";
+import React, { Profiler, useCallback, useState, createRef } from "react";
 import Container from "../../../layouts/component/layout-container";
 import Card from "./product-card";
-import ProductFilter from "./product-filter";
-import { useTranslation } from "react-i18next";
+import FilterContainer, {
+  LogoArea,
+  FilterButtonArea,
+  FilterButtonWrapper,
+} from "./product-filter";
+import { Button, ListPopUp } from "../../../layouts/component/layout-button";
+import { useOnClickOutside } from "../../../hooks/hooks-clickoutside";
+
+/**
+ * Product Filter Area
+ */
+export function ProductFilterArea({ onSortHighPrice, onSortLowPrice }) {
+  const ref = createRef();
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const openListPopUp = useCallback(() => {
+    setIsPopUpOpen(true);
+  });
+  const list = [
+    {
+      label: "Price High To Low",
+      onPress: () => {
+        onSortHighPrice();
+        setIsPopUpOpen(false);
+      },
+    },
+    {
+      label: "Price Low To High",
+      onPress: () => {
+        onSortLowPrice();
+        setIsPopUpOpen(false);
+      },
+    },
+  ];
+  useOnClickOutside(ref, () => setIsPopUpOpen(false));
+
+  return (
+    <Container>
+      <FilterContainer>
+        <LogoArea />
+        <FilterButtonArea>
+          <FilterButtonWrapper data-testid="filter-wrapper">
+            <Button label={"Filter Product"} onPress={openListPopUp} />
+            {isPopUpOpen && <ListPopUp data={list} ref={ref} />}
+          </FilterButtonWrapper>
+        </FilterButtonArea>
+      </FilterContainer>
+    </Container>
+  );
+}
 
 /**
  * ProductCardLoading only render if
@@ -65,17 +112,15 @@ export function ProductCard({ data, t }) {
  * reducers: product,
  * actions: { sortProductHighPrice, sortProductLowPrice}
  */
-export function ProductContainer({
-  product,
-  sortProductHighPrice,
-  sortProductLowPrice,
-  t,
-}) {
+export function ProductContainer({ product, t }) {
+  const sortProductHighPrice = () => console.log("sortProductHighPrice");
+  const sortProductLowPrice = () => console.log("sortProductLowPrice");
   return (
     <Profiler id="ProductScreen" onRender={() => {}}>
-      <Container>
-        <ProductFilter />
-      </Container>
+      <ProductFilterArea
+        onSortHighPrice={sortProductHighPrice}
+        onSortLowPrice={sortProductLowPrice}
+      />
       <Container>
         {product && product.loaded
           ? product.data.map((item) => (
