@@ -6,6 +6,7 @@ import {
   sortProductLowPrice,
 } from "../product-actions";
 import responseJson from "./response.json";
+import newResponse from "./new-response.json";
 import produce from "immer";
 
 describe("product-reducer test", () => {
@@ -21,10 +22,11 @@ describe("product-reducer test", () => {
   it("should produce if receive response data from api", () => {
     const expectedResult = produce(state, (draft) => {
       draft.loaded = true;
-      (draft.data = responseJson.results),
-        (draft.metadata = responseJson.metadata);
+      draft.data = newResponse.results;
+      draft.metadata = responseJson.metadata;
     });
 
+    console.log("expected result", expectedResult);
     expect(
       reducer(
         state,

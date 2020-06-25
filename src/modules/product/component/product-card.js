@@ -51,7 +51,7 @@ const Sold = styled.div`
   z-index: 1;
   border-radius: 5px;
   background: ${colors.red};
-  display: ${(props) => (props.show ? "block" : "none")};
+  display: block;
 `;
 
 const Content = styled.div`
@@ -63,30 +63,66 @@ const Content = styled.div`
   border-radius: 5px;
 `;
 
-const Image = styled.div`
-  width: 100%;
-  height: 150px;
-`;
+const Image = ({ imageUrl }) => {
+  return (
+    <div
+      css={css`
+        width: 100%;
+        height: auto;
+      `}
+    >
+      <img
+        css={css`
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          object-position: 50% 50%; /* default value: image is centered*/
+          object-position: 0 0; /* positioned top left of the content box */
+          border-radius: 4px;
+        `}
+        src={imageUrl}
+      />
+    </div>
+  );
+};
 
 const InfoProduct = styled.div`
   width: 100%;
-  height: 200px;
+  height: 240px;
+`;
+
+const ProductTextArea = styled.div`
+  width: 100%;
+  padding: 10px 0px;
+  max-height: 60px;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 `;
 
 const ProductTitle = styled.h3`
   text-align: center;
   margin: 15px 10%;
+  font-weight: 400;
 `;
 
-const ProductRetail = styled.h5`
+const ProductRetail = styled.h4`
   text-align: center;
   margin: 15px 10%;
+  font-weight: 400;
   display: ${(props) => (props.show ? "block" : "none")};
+  text-decoration: line-through;
+  color: ${colors.red};
 `;
 
 const ProductPrice = styled.h1`
   text-align: center;
   margin: 15px 10%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  color: ${colors.blue};
 `;
 
 /***
@@ -155,6 +191,7 @@ export default {
   Image,
   ImageLoading,
   InfoProduct,
+  ProductTextArea,
   ProductTitle,
   ProductTitleLoading,
   ProductRetail,

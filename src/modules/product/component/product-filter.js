@@ -8,9 +8,10 @@ import {
   phone,
 } from "../../../layouts/style/style-query";
 import colors from "../../../layouts/style/style-colors";
+import logo from "../../../images/logo.svg";
 
 const FilterContainer = styled.div`
-  flex: 1;
+  flex: 1 1;
   display: flex;
   width: 100%;
   height: auto;
@@ -18,11 +19,24 @@ const FilterContainer = styled.div`
   justify-content: space-between;
 `;
 
-const LogoArea = styled.div`
-  width: 300px;
-  height: 100px;
-  background: ${colors.red};
-`;
+const LogoArea = () => {
+  return (
+    <div
+      css={css`
+        width: 300px;
+        height: 100px;
+      `}
+    >
+      <img
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
+        src={`${logo}`}
+      />
+    </div>
+  );
+};
 
 const FilterButtonArea = styled.div`
   width: 200px;

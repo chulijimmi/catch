@@ -59,7 +59,6 @@ export function ProductCardLoading() {
   return (
     <Card.Col data-testid="product-card-loading">
       <Card.Link>
-        <Card.Sold></Card.Sold>
         <Card.Content>
           <Card.ImageLoading />
           <Card.InfoProduct>
@@ -92,13 +91,29 @@ export function ProductCard({ data, t }) {
         ) : null}
 
         <Card.Content>
-          <Card.Image data-testid="product-card-image"></Card.Image>
+          <Card.Image
+            imageUrl={data.imageUrl}
+            data-testid="product-card-image"
+          ></Card.Image>
           <Card.InfoProduct>
-            <Card.ProductTitle data-testid="product-card-title"></Card.ProductTitle>
-            {data.retailPrice !== 0 ? (
-              <Card.ProductRetail data-testid="product-card-retail" />
-            ) : null}
-            <Card.ProductPrice data-testid="product-card-price"></Card.ProductPrice>
+            <Card.ProductTextArea>
+              <Card.ProductTitle data-testid="product-card-title">
+                {data.name}
+              </Card.ProductTitle>
+            </Card.ProductTextArea>
+            <Card.ProductTextArea>
+              <Card.ProductRetail
+                show={data.retailPrice !== 0 ? true : false}
+                data-testid="product-card-retail"
+              >
+                USD {data.retailPrice}
+              </Card.ProductRetail>
+            </Card.ProductTextArea>
+            <Card.ProductTextArea>
+              <Card.ProductPrice data-testid="product-card-price">
+                USD {data.salePrice}
+              </Card.ProductPrice>
+            </Card.ProductTextArea>
           </Card.InfoProduct>
         </Card.Content>
       </Card.Link>
@@ -118,12 +133,17 @@ export function ProductContainer({
   sortProductLowPrice,
   t,
 }) {
+  const sortHigh = useCallback(() => {
+    sortProductHighPrice(product.data);
+  });
+
+  const sortLow = useCallback(() => {
+    sortProductLowPrice(product.data);
+  });
+
   return (
     <Profiler id="ProductScreen" onRender={() => {}}>
-      <ProductFilterArea
-        onSortHighPrice={sortProductHighPrice}
-        onSortLowPrice={sortProductLowPrice}
-      />
+      <ProductFilterArea onSortHighPrice={sortHigh} onSortLowPrice={sortLow} />
       <Container>
         {product && product.loaded
           ? product.data.map((item) => (

@@ -66,6 +66,7 @@ export const ListPopUp = React.forwardRef((props, ref) => {
         background: white;
         width: 100%;
         top: 100px;
+        left: 0;
         z-index: 2;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
       `}

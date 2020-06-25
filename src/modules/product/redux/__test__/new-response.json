@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "query": "best sellers",
+    "total": 102,
+    "page": 1,
+    "pages": 1
+  },
+  "results": [
+    {
+      "id": "ffc4211a-fb81-45e3-b1d8-2d399a92aa89",
+      "name": "Buy Olaplex No. 3 Hair Perfector",
+      "salePrice": 31.45,
+      "retailPrice": 50,
+      "imageUrl": "https://s.catch.com.au/images/product/0002/2114/593f690189ac9183721654_w200.jpg",
+      "quantityAvailable": 0
+    },
+    {
+      "id": "f56cb6f2-a926-4ff4-80be-4518b0d1997d",
+      "name": "Havaianas Top Thongs - Black",
+      "salePrice": 14.99,
+      "retailPrice": 25,
+      "imageUrl": "https://s.catch.com.au/images/product/0001/1431/57aa8e0fcba93464428129_w200.jpg",
+      "quantityAvailable": 71
+    },
+    {
+      "id": "46397d56-2726-45de-8514-d8ed6984a600",
+      "name": "4 x 60pk Finish Quantum Max Powerball Super Charged Dishwashing Caps Lemon Sparkle",
+      "salePrice": 59.0,
+      "retailPrice": 184.17,
+      "imageUrl": "https://s.catch.com.au/images/product/0001/1909/5d47c0d64988e613254534_w200.jpg",
+      "quantityAvailable": 56
+    },
+    {
+      "id": "1b7d187a-d015-42ee-97e4-669b27b8d92f",
+      "name": "Havaianas Slim Thongs - Black",
+      "salePrice": 19.99,
+      "retailPrice": 30.0,
+      "imageUrl": "https://s.catch.com.au/images/product/0001/1891/57ac11b61d049250349167_w200.jpg",
+      "quantityAvailable": 33
+    },
+    {
+      "id": "6f059b72-40e3-4ec1-9f1f-dbc520e304f3",
+      "name": "Dyson V6 Animal Extra Cordless Handstick Vacuum Cleaner",
+      "salePrice": 398.0,
+      "retailPrice": 549.0,
+      "imageUrl": "https://s.catch.com.au/images/product/0013/13454/5c6b391a34c8f777276564_w200.jpg",
+      "quantityAvailable": 14
+    }
+  ]
+}

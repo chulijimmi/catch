@@ -26,6 +26,10 @@ export default function reducer(state = initialState, action: Function) {
   return produce(state, (draft) => {
     switch (action.type) {
       case LOAD_PRODUCT_SUCCESS:
+        action.results.forEach((item) => {
+          item.salePrice = item.salePrice / 100;
+          item.retailPrice = item.retailPrice / 100;
+        });
         draft.loaded = true;
         draft.data = action.results;
         draft.metadata = action.metadata;
