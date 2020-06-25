@@ -22,7 +22,7 @@ export const initialState = {
  * @param {Object} state
  * @param {Function} action
  */
-function reducer(state = initialState, action: Function) {
+export default function reducer(state = initialState, action: Function) {
   return produce(state, (draft) => {
     switch (action.type) {
       case LOAD_PRODUCT_SUCCESS:
@@ -49,5 +49,3 @@ function reducer(state = initialState, action: Function) {
     }
   });
 }
-
-export default reducer;

@@ -112,9 +112,12 @@ export function ProductCard({ data, t }) {
  * reducers: product,
  * actions: { sortProductHighPrice, sortProductLowPrice}
  */
-export function ProductContainer({ product, t }) {
-  const sortProductHighPrice = () => console.log("sortProductHighPrice");
-  const sortProductLowPrice = () => console.log("sortProductLowPrice");
+export function ProductContainer({
+  product,
+  sortProductHighPrice,
+  sortProductLowPrice,
+  t,
+}) {
   return (
     <Profiler id="ProductScreen" onRender={() => {}}>
       <ProductFilterArea
