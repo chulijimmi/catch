@@ -47,11 +47,13 @@ const Sold = styled.div`
   top: 80px;
   right: 30px;
   width: 100px;
-  height: 50px;
+  padding: 15px;
   z-index: 1;
   border-radius: 5px;
   background: ${colors.red};
   display: block;
+  color: white;
+  text-align: center;
 `;
 
 const Content = styled.div`
